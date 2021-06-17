@@ -11,8 +11,8 @@ import NotFound from "./components/NotFound";
 function App() {
   return (
     <Router>
-      <UserProvider>
-        <div className="container px-0">
+      <div className="container px-0">
+        <UserProvider>
           <Switch>
             <Route
               path="/register"
@@ -26,15 +26,15 @@ function App() {
               exact={true}
             ></Route>
             <Route
-              path="/reset-password/:id"
-              component={ResetPassword}
+              path="/:id"
+              children={<ResetPassword />}
               exact={true}
             ></Route>
             <Route path="/" component={UserLogin} exact={true}></Route>
             <Route path="*" component={NotFound}></Route>
           </Switch>
-        </div>
-      </UserProvider>
+        </UserProvider>
+      </div>
     </Router>
   );
 }
