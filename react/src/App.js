@@ -18,11 +18,12 @@ function App() {
             <Route exact path="/dashboard" component={Dashboard}></Route>
             <Route exact path="/forgot-password" component={ForgotPass}></Route>
             <Route
-              path="/reset/:randomstring"
+              exact
+              path="/reset-password"
               component={ResetPassword}
-              exact={true}
             ></Route>
             <Route exact path="/" component={UserLogin}></Route>
+            <Route exact path="*" component={NotFound}></Route>
           </Switch>
         </div>
       </UserProvider>
