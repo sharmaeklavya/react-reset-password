@@ -15,22 +15,18 @@ function App() {
         <div className="container px-0">
           <Switch>
             <Route
-              path="/register/"
+              path="/register"
               component={RegisterUser}
               exact={true}
             ></Route>
+            <Route path="/dashboard" component={Dashboard} exact={true}></Route>
             <Route
-              path="/dashboard/"
-              component={Dashboard}
-              exact={true}
-            ></Route>
-            <Route
-              path="/forgot-password/"
+              path="/forgot-password"
               component={ForgotPass}
               exact={true}
             ></Route>
             <Route
-              path="/reset-password/:id"
+              path="/reset-password"
               component={ResetPassword}
               exact={true}
             ></Route>
