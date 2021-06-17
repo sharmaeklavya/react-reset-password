@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useParams, Link, useHistory } from "react-router-dom";
 
-function ResetPassword() {
+export default function ResetPassword() {
   const history = useHistory();
   const [newpass, setNewpass] = useState("");
   const [repeatpass, setRepeatpass] = useState("");
@@ -10,7 +10,6 @@ function ResetPassword() {
 
   return (
     <>
-      <h1>{id}</h1>
       <div className="card card__">
         <p className="title">Update Password</p>
         <div className="reset-img">
@@ -68,8 +67,7 @@ function ResetPassword() {
           </div>
         </div>
       </div>
+      <h1>{id}</h1>
     </>
   );
 }
-
-export default ResetPassword;
