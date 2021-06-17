@@ -10,6 +10,7 @@ export default function ResetPassword(props) {
 
   return (
     <>
+      <h1>{id}</h1>
       <div className="card card__">
         <p className="title">Update Password</p>
         <div className="reset-img">
@@ -67,8 +68,6 @@ export default function ResetPassword(props) {
           </div>
         </div>
       </div>
-      <h1>{id}</h1>
-      <h1>{props.match.params.id}</h1>
     </>
   );
 }

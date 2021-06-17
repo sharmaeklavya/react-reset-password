@@ -26,8 +26,8 @@ function App() {
               exact={true}
             ></Route>
             <Route
-              path="/:id"
-              children={<ResetPassword />}
+              path="/reset-password/:randomstring"
+              component={ResetPassword}
               exact={true}
             ></Route>
             <Route path="/" component={UserLogin} exact={true}></Route>
