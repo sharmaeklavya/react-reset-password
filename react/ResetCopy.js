@@ -1,11 +1,49 @@
 import React, { useState } from "react";
 import { Link, useHistory } from "react-router-dom";
 
-function ResetPassword() {
+function ResetPassword(props) {
+  const danger = document.querySelector(".invalid");
+  const success = document.querySelector(".valid");
+  const unauthorized = document.querySelector(".unauthorized");
   const history = useHistory();
   const [newpass, setNewpass] = useState("");
   const [repeatpass, setRepeatpass] = useState("");
-  const handleSubmit = async (e) => {};
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    if (matchPassword() !== undefined) {
+      const connect = await fetch(
+        `https://noderesetpassword.herokuapp.com${props.location.pathname}`,
+        {
+          method: "POST",
+          body: JSON.stringify({
+            password: matchPassword(),
+          }),
+          headers: { "Content-type": "application/json" },
+        }
+      );
+      status(connect);
+    }
+  };
+
+  const matchPassword = () => {
+    if (newpass === repeatpass) {
+      danger.classList.add("hidden");
+      return repeatpass;
+    } else danger.classList.remove("hidden");
+  };
+
+  const status = (res) => {
+    if (res.status === 200) {
+      success.classList.remove("hidden");
+      unauthorized.classList.add("hidden");
+      setTimeout(() => {
+        history.push("/");
+      }, 500);
+    } else {
+      unauthorized.classList.remove("hidden");
+      success.classList.add("hidden");
+    }
+  };
 
   return (
     <div className="card card__">

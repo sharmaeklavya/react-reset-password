@@ -14,12 +14,11 @@ function App() {
       <UserProvider>
         <div className="container px-0">
           <Switch>
-            <Route exact path="/dashboard" component={Dashboard}></Route>
-            <Route exact path="/forgotpassword" component={ForgotPass}></Route>
-            <Route exact path="/reset/:id" component={ResetPassword}></Route>
             <Route exact path="/register" component={RegisterUser}></Route>
+            <Route exact path="/dashboard" component={Dashboard}></Route>
+            <Route exact path="/forgot-password" component={ForgotPass}></Route>
+            <Route exact path="/reset/:id" component={ResetPassword}></Route>
             <Route exact path="/" component={UserLogin}></Route>
-            <Route path="*" component={NotFound}></Route>
           </Switch>
         </div>
       </UserProvider>
