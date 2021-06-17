@@ -59,7 +59,7 @@ function ResetPassword() {
           </button>
         </form>
         <div className="links">
-          <Link to={"/forgotpassword"} className="link">
+          <Link to={"/forgot-password"} className="link">
             Forgot Password
           </Link>
         </div>
