@@ -26,9 +26,9 @@ function App() {
               exact={true}
             ></Route>
             <Route
-              path="/reset-password/:randomstring"
+              path="/reset-password/:id"
               component={ResetPassword}
-              exact={false}
+              exact={true}
             ></Route>
             <Route path="/" component={UserLogin} exact={true}></Route>
             <Route path="*" component={NotFound}></Route>
