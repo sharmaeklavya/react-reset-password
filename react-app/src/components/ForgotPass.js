@@ -54,7 +54,7 @@ function ForgotPass() {
         </p>
         <p className="hidden valid">
           <small className="text-success">
-            Please check your email to verify if it's really you.
+            We have sent you a link on your email. Please check and verify.
           </small>
         </p>
         <form className="reset-form" onSubmit={handleSubmit}>
