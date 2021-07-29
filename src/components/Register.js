@@ -11,14 +11,11 @@ function RegisterUser() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const connect = await fetch(
-      "https://noderesetpassword.herokuapp.com/register",
-      {
-        method: "POST",
-        body: JSON.stringify({ fullname, email, password }),
-        headers: { "Content-type": "application/json" },
-      }
-    );
+    const connect = await fetch("https://node-reset.herokuapp.com/register", {
+      method: "POST",
+      body: JSON.stringify({ fullname, email, password }),
+      headers: { "Content-type": "application/json" },
+    });
     status(connect);
   };
 

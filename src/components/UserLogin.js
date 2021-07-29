@@ -11,14 +11,11 @@ function UserLogin() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const connect = await fetch(
-      "https://noderesetpassword.herokuapp.com/login",
-      {
-        method: "POST",
-        body: JSON.stringify({ email, password }),
-        headers: { "Content-type": "application/json" },
-      }
-    );
+    const connect = await fetch("https://node-reset.herokuapp.com/login", {
+      method: "POST",
+      body: JSON.stringify({ email, password }),
+      headers: { "Content-type": "application/json" },
+    });
     if (connect.status === 200) history.push("/dashboard");
     const res = await connect.json();
     userInfo.setUserName(res.name);

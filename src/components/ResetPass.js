@@ -12,7 +12,7 @@ function ResetPassword(props) {
     e.preventDefault();
     if (matchPassword() !== undefined) {
       const connect = await fetch(
-        `https://noderesetpassword.herokuapp.com${props.location.pathname}`,
+        `https://node-reset.herokuapp.com${props.location.pathname}`,
         {
           method: "POST",
           body: JSON.stringify({

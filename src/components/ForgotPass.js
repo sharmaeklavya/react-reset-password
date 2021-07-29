@@ -10,7 +10,7 @@ function ForgotPass() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     const connect = await fetch(
-      "https://noderesetpassword.herokuapp.com/forgotpassword",
+      "https://node-reset.herokuapp.com/forgotpassword",
       {
         method: "POST",
         body: JSON.stringify({ email }),
